@@ -19,10 +19,14 @@
             <span class="brand-text">BUMBITE</span>
         </a>
         
-        <ul>
-            <li><a href="#home">Anasayfa</a></li>
-            <li><a href="#menu">Menü</a></li>
-            <li><a href="#location">Konum</a></li>
+        <div class="hamburger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Anasayfa</a></li>
+            <li><a href="#menu" class="nav-item">Menü</a></li>
+            <li><a href="#location" class="nav-item">Konum</a></li>
         </ul>
     </nav>
 </header>
@@ -153,6 +157,22 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
