@@ -34,6 +34,7 @@ nav {
     padding: 0.8rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo-text-container {
@@ -45,7 +46,7 @@ nav {
 .brand-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -58,22 +59,11 @@ nav {
     transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
-    nav {
-        padding: 0.8rem 5%;
-    }
-    
-    .brand-text {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-    }
+.hamburger-menu {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 nav ul {
@@ -96,6 +86,48 @@ nav ul li a:hover {
     color: #fffcf5;
     transform: translateY(-2px);
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
+
+    .brand-text {
+        font-size: 1.8rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ff6b35;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
 }
 
 .hero {
@@ -299,6 +331,20 @@ nav ul li a:hover {
     margin-top: 40px;
     letter-spacing: -1px;
     text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+    .retro-heading {
+        font-size: 3rem;
+    }
+    
+    .retro-paper {
+        padding: 40px 20px;
+    }
+
+    .retro-list li {
+        font-size: 0.9rem;
+    }
 }
 
 .retro-location-section {
@@ -520,13 +566,5 @@ nav ul li a:hover {
 @media (max-width: 600px) {
     .footer-brand {
         font-size: 3.5rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .retro-heading {
-        font-size: 3rem;
     }
 }
